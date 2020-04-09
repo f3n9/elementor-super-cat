@@ -27,7 +27,7 @@ class YX_Super_Cat_Tab {
         if(!$this->api_key && $this->ac4woo_exists() && $opt = get_option("activecampaign_for_woocommerce_settings")){
             $this->api_key = $opt["api_key"];
         }
-        return new ActiveCampaign_API_Gatto($this->api_url, $this->api_key);
+        return new YX_ActiveCampaign_API_Gatto($this->api_url, $this->api_key);
     }
 
     private function ac4woo_exists(){

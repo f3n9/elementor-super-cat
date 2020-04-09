@@ -1,6 +1,6 @@
 <?php
 
-class ActiveCampaign_API_Gatto {
+class YX_ActiveCampaign_API_Gatto {
     private $api_url;
     private $api_key;
     private $all_tags;

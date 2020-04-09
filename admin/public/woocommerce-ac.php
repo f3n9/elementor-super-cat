@@ -56,7 +56,7 @@ class YX_Super_Cat_Woocomm_AC {
         if(!$api_url && $this->ac4woo_exists() && $opt = get_option("activecampaign_for_woocommerce_settings")){
             $api_url = $opt["api_key"];
         }
-        return new ActiveCampaign_API_Gatto($api_url, $api_key);
+        return new YX_ActiveCampaign_API_Gatto($api_url, $api_key);
     }
 
     private function ac4woo_exists(){
