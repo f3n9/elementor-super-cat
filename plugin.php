@@ -1,5 +1,5 @@
 <?php
-namespace ElementorSuperCat;
+namespace YXSuperCat;
 
 /**
 * Class Plugin

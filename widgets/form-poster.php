@@ -1,5 +1,5 @@
 <?php
-namespace ElementorSuperCat\Widgets;
+namespace YXSuperCat\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;

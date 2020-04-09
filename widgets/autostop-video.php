@@ -1,6 +1,6 @@
 <?php
 
-namespace ElementorSuperCat\Widgets;
+namespace YXSuperCat\Widgets;
 use \Elementor\Modules\DynamicTags\Module as TagsModule;
 
 

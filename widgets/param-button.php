@@ -1,5 +1,5 @@
 <?php
-namespace ElementorSuperCat\Widgets;
+namespace YXSuperCat\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
