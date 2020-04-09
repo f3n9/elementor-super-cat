@@ -32,7 +32,7 @@ class Form_Poster extends Widget_Base {
     * @return string Widget title.
     */
     public function get_title() {
-        return __( 'Form Poster', 'elementor-super-cat' );
+        return __( 'Form Poster', 'yx-super-cat' );
     }
 
     /**
@@ -59,7 +59,7 @@ class Form_Poster extends Widget_Base {
     * @return array Widget categories.
     */
     public function get_categories() {
-        return [ 'super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -72,7 +72,7 @@ class Form_Poster extends Widget_Base {
     * @return array Widget scripts dependencies.
     */
     public function get_script_depends() {
-        return [ 'elementor-super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -86,14 +86,14 @@ class Form_Poster extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __( 'Content', 'elementor-super-cat' ),
+                'label' => __( 'Content', 'yx-super-cat' ),
             ]
         );
 
         $this->add_control(
             'formid',
             [
-                'label' => __( 'CSS ID of the form widget', 'elementor-super-cat' ),
+                'label' => __( 'CSS ID of the form widget', 'yx-super-cat' ),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -101,7 +101,7 @@ class Form_Poster extends Widget_Base {
         $this->add_control(
             'url',
             [
-                'label' => __( 'Action URL', 'elementor-super-cat' ),
+                'label' => __( 'Action URL', 'yx-super-cat' ),
                 'type' => Controls_Manager::TEXT,
             ]
         );
@@ -109,15 +109,15 @@ class Form_Poster extends Widget_Base {
         $this->add_control(
             'replace_underscores',
             [
-                'label' => __( 'Replace _# with [#] in input names.<br><br>E.g.: <b>field_1_0</b> becomes <b>field[1][0]</b>', 'elementor-super-cat' ),
+                'label' => __( 'Replace _# with [#] in input names.<br><br>E.g.: <b>field_1_0</b> becomes <b>field[1][0]</b>', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'yes' => [
-                        'title' => __( 'Yes', 'elementor-super-cat' ),
+                        'title' => __( 'Yes', 'yx-super-cat' ),
                         'icon' => 'fa fa-check',
                     ],
                     'no' => [
-                        'title' => __( 'No', 'elementor-super-cat' ),
+                        'title' => __( 'No', 'yx-super-cat' ),
                         'icon' => 'fa fa-times',
                     ]
                 ],

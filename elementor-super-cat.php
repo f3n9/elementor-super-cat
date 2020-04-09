@@ -1,12 +1,12 @@
 <?php
 /**
-* Plugin Name: Elementor SuperCat
-* Description: Elementor add-ons
-* Plugin URI:  https://github.com/dettogatto/elementor-super-cat
+* Plugin Name: YX SuperCat
+* Description: YX Elementor add-ons
+* Plugin URI:  https://github.com/f3n9/yx-super-cat
 * Version:     2.5.2
 * Author:      Nicola Cavallazzi
 * Author URI:  https://cosmo.cat/
-* Text Domain: elementor-super-cat
+* Text Domain: yx-super-cat
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -15,14 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/dettogatto/elementor-super-cat/',
+    'https://github.com/f3n9/elementor-super-cat/',
     __FILE__,
-    'elementor-super-cat'
+    'yx-super-cat'
 );
 
 // Include the admin menu
 require_once( __DIR__ . '/admin/loader.php' );
-$admin_esc = new Elementor_Super_Cat_Admin();
+$admin_esc = new YX_Super_Cat_Admin();
 foreach($admin_esc->tabs as $k => $v){
     $file = __DIR__ . '/admin/public/' . $k .'.php';
     if(file_exists($file)){
@@ -39,7 +39,7 @@ $myUpdateChecker->setBranch('master');
 
 
 /**
-* Main Elementor Super Cat Class
+* Main YX Super Cat Class
 *
 * The init class that runs the Super Cat plugin.
 * Intended To make sure that the plugin's minimum requirements are met.
@@ -48,7 +48,7 @@ $myUpdateChecker->setBranch('master');
 *
 * Any custom code should go inside Plugin Class in the plugin.php file.
 */
-final class Elementor_Super_Cat {
+final class YX_Super_Cat {
 
     /**
     * Plugin Version
@@ -98,9 +98,9 @@ final class Elementor_Super_Cat {
     */
     public function create_category($elements_manager) {
         $elements_manager->add_category(
-            'super-cat',
+            'yx-super-cat',
             [
-                'title' => __( 'Super Cat', 'super-cat' ),
+                'title' => __( 'YX Super Cat', 'yx-super-cat' ),
                 'icon' => 'fa fa-plug',
             ]
         );
@@ -115,7 +115,7 @@ final class Elementor_Super_Cat {
     * @access public
     */
     public function i18n() {
-        load_plugin_textdomain( 'elementor-super-cat' );
+        load_plugin_textdomain( 'yx-super-cat' );
     }
 
     /**
@@ -167,9 +167,9 @@ final class Elementor_Super_Cat {
 
         $message = sprintf(
             /* translators: 1: Plugin name 2: Elementor */
-            esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-super-cat' ),
-            '<strong>' . esc_html__( 'Elementor Super Cat', 'elementor-super-cat' ) . '</strong>',
-            '<strong>' . esc_html__( 'Elementor', 'elementor-super-cat' ) . '</strong>'
+            esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'yx-super-cat' ),
+            '<strong>' . esc_html__( 'YX Super Cat', 'yx-super-cat' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'yx-super-cat' ) . '</strong>'
         );
 
         printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -189,9 +189,9 @@ final class Elementor_Super_Cat {
 
         $message = sprintf(
             /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-super-cat' ),
-            '<strong>' . esc_html__( 'Elementor Super Cat', 'elementor-super-cat' ) . '</strong>',
-            '<strong>' . esc_html__( 'Elementor', 'elementor-super-cat' ) . '</strong>',
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'yx-super-cat' ),
+            '<strong>' . esc_html__( 'YX Super Cat', 'yx-super-cat' ) . '</strong>',
+            '<strong>' . esc_html__( 'Elementor', 'yx-super-cat' ) . '</strong>',
             self::MINIMUM_ELEMENTOR_VERSION
         );
 
@@ -212,9 +212,9 @@ final class Elementor_Super_Cat {
 
         $message = sprintf(
             /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-super-cat' ),
-            '<strong>' . esc_html__( 'Elementor Super Cat', 'elementor-super-cat' ) . '</strong>',
-            '<strong>' . esc_html__( 'PHP', 'elementor-super-cat' ) . '</strong>',
+            esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'yx-super-cat' ),
+            '<strong>' . esc_html__( 'YX Super Cat', 'yx-super-cat' ) . '</strong>',
+            '<strong>' . esc_html__( 'PHP', 'yx-super-cat' ) . '</strong>',
             self::MINIMUM_PHP_VERSION
         );
 
@@ -222,5 +222,5 @@ final class Elementor_Super_Cat {
     }
 }
 
-// Instantiate Elementor_Super_Cat.
-new Elementor_Super_Cat();
+// Instantiate YX_Super_Cat.
+new YX_Super_Cat();

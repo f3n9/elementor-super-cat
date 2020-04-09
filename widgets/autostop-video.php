@@ -38,7 +38,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
     * @return string Widget title.
     */
     public function get_title() {
-        return __( 'Video CTA', 'elementor-super-cat' );
+        return __( 'Video CTA', 'yx-super-cat' );
     }
 
     /**
@@ -86,7 +86,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
     * @return array Widget categories.
     */
     public function get_categories() {
-        return [ 'super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -528,9 +528,9 @@ class Autostop_Video extends \Elementor\Widget_Base {
                     'active' => true,
                 ],
                 'default' => '',
-                'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor-super-cat' ),
+                'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'yx-super-cat' ),
                 'label_block' => false,
-                'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-super-cat' ),
+                'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'yx-super-cat' ),
                 'separator' => 'before',
 
             ]
@@ -541,24 +541,24 @@ class Autostop_Video extends \Elementor\Widget_Base {
         // $this->start_controls_section(
         // 	'section_image_overlay',
         // 	[
-        // 		'label' => __( 'Image Overlay', 'elementor-super-cat' ),
+        // 		'label' => __( 'Image Overlay', 'yx-super-cat' ),
         // 	]
         // );
         //
         // $this->add_control(
         // 	'show_image_overlay',
         // 	[
-        // 		'label' => __( 'Image Overlay', 'elementor-super-cat' ),
+        // 		'label' => __( 'Image Overlay', 'yx-super-cat' ),
         // 		'type' => \Elementor\Controls_Manager::SWITCHER,
-        // 		'label_off' => __( 'Hide', 'elementor-super-cat' ),
-        // 		'label_on' => __( 'Show', 'elementor-super-cat' ),
+        // 		'label_off' => __( 'Hide', 'yx-super-cat' ),
+        // 		'label_on' => __( 'Show', 'yx-super-cat' ),
         // 	]
         // );
         //
         // $this->add_control(
         // 	'image_overlay',
         // 	[
-        // 		'label' => __( 'Choose Image', 'elementor-super-cat' ),
+        // 		'label' => __( 'Choose Image', 'yx-super-cat' ),
         // 		'type' => \Elementor\Controls_Manager::MEDIA,
         // 		'default' => [
         // 			'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -587,7 +587,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         // $this->add_control(
         // 	'show_play_icon',
         // 	[
-        // 		'label' => __( 'Play Icon', 'elementor-super-cat' ),
+        // 		'label' => __( 'Play Icon', 'yx-super-cat' ),
         // 		'type' => \Elementor\Controls_Manager::SWITCHER,
         // 		'default' => 'yes',
         // 		'condition' => [
@@ -600,11 +600,11 @@ class Autostop_Video extends \Elementor\Widget_Base {
         // $this->add_control(
         // 	'lightbox',
         // 	[
-        // 		'label' => __( 'Lightbox', 'elementor-super-cat' ),
+        // 		'label' => __( 'Lightbox', 'yx-super-cat' ),
         // 		'type' => \Elementor\Controls_Manager::SWITCHER,
         // 		'frontend_available' => true,
-        // 		'label_off' => __( 'Off', 'elementor-super-cat' ),
-        // 		'label_on' => __( 'On', 'elementor-super-cat' ),
+        // 		'label_off' => __( 'Off', 'yx-super-cat' ),
+        // 		'label_on' => __( 'On', 'yx-super-cat' ),
         // 		'condition' => [
         // 			'show_image_overlay' => 'yes',
         // 			'image_overlay[url]!' => '',
@@ -620,7 +620,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_video_style',
             [
-                'label' => __( 'Video', 'elementor-super-cat' ),
+                'label' => __( 'Video', 'yx-super-cat' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -628,7 +628,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'aspect_ratio',
             [
-                'label' => __( 'Aspect Ratio', 'elementor-super-cat' ),
+                'label' => __( 'Aspect Ratio', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
                     '169' => '16:9',
@@ -654,7 +654,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'play_icon_title',
             [
-                'label' => __( 'Play Icon', 'elementor-super-cat' ),
+                'label' => __( 'Play Icon', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'condition' => [
                     'show_image_overlay' => 'yes',
@@ -667,7 +667,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'play_icon_color',
             [
-                'label' => __( 'Color', 'elementor-super-cat' ),
+                'label' => __( 'Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elementor-custom-embed-play i' => 'color: {{VALUE}}',
@@ -682,7 +682,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'play_icon_size',
             [
-                'label' => __( 'Size', 'elementor-super-cat' ),
+                'label' => __( 'Size', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -707,7 +707,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
                 'selector' => '{{WRAPPER}} .elementor-custom-embed-play i',
                 'fields_options' => [
                     'text_shadow_type' => [
-                        'label' => _x( 'Shadow', 'Text Shadow Control', 'elementor-super-cat' ),
+                        'label' => _x( 'Shadow', 'Text Shadow Control', 'yx-super-cat' ),
                     ],
                 ],
                 'condition' => [
@@ -769,7 +769,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'margin_bottom_tit',
             [
-                'label' => __( 'Bottom Margin', 'elementor-super-cat' ),
+                'label' => __( 'Bottom Margin', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -849,7 +849,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_lightbox_style',
             [
-                'label' => __( 'Lightbox', 'elementor-super-cat' ),
+                'label' => __( 'Lightbox', 'yx-super-cat' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_image_overlay' => 'yes',
@@ -862,7 +862,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'lightbox_color',
             [
-                'label' => __( 'Background Color', 'elementor-super-cat' ),
+                'label' => __( 'Background Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '#elementor-lightbox-{{ID}}' => 'background-color: {{VALUE}};',
@@ -873,7 +873,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'lightbox_ui_color',
             [
-                'label' => __( 'UI Color', 'elementor-super-cat' ),
+                'label' => __( 'UI Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '#elementor-lightbox-{{ID}} .dialog-lightbox-close-button' => 'color: {{VALUE}}',
@@ -884,7 +884,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'lightbox_ui_color_hover',
             [
-                'label' => __( 'UI Hover Color', 'elementor-super-cat' ),
+                'label' => __( 'UI Hover Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '#elementor-lightbox-{{ID}} .dialog-lightbox-close-button:hover' => 'color: {{VALUE}}',
@@ -896,7 +896,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'lightbox_video_width',
             [
-                'label' => __( 'Content Width', 'elementor-super-cat' ),
+                'label' => __( 'Content Width', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'default' => [
                     'unit' => '%',
@@ -915,12 +915,12 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'lightbox_content_position',
             [
-                'label' => __( 'Content Position', 'elementor-super-cat' ),
+                'label' => __( 'Content Position', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'frontend_available' => true,
                 'options' => [
-                    '' => __( 'Center', 'elementor-super-cat' ),
-                    'top' => __( 'Top', 'elementor-super-cat' ),
+                    '' => __( 'Center', 'yx-super-cat' ),
+                    'top' => __( 'Top', 'yx-super-cat' ),
                 ],
                 'selectors' => [
                     '#elementor-lightbox-{{ID}} .elementor-video-container' => '{{VALUE}}; transform: translateX(-50%);',
@@ -934,7 +934,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'lightbox_content_animation',
             [
-                'label' => __( 'Entrance Animation', 'elementor-super-cat' ),
+                'label' => __( 'Entrance Animation', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::ANIMATION,
                 'frontend_available' => true,
             ]
@@ -948,7 +948,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_style',
             [
-                'label' => __( 'Button', 'elementor-super-cat' ),
+                'label' => __( 'Button', 'yx-super-cat' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'overlay_block' => 'yes',
@@ -962,14 +962,14 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->start_controls_tab(
             'tab_button_normal',
             [
-                'label' => __( 'Normal', 'elementor-super-cat' ),
+                'label' => __( 'Normal', 'yx-super-cat' ),
             ]
         );
 
         $this->add_control(
             'button_text_color',
             [
-                'label' => __( 'Text Color', 'elementor-super-cat' ),
+                'label' => __( 'Text Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -991,7 +991,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'background_color',
             [
-                'label' => __( 'Background Color', 'elementor-super-cat' ),
+                'label' => __( 'Background Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'scheme' => [
                     'type' => \Elementor\Scheme_Color::get_type(),
@@ -1008,14 +1008,14 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->start_controls_tab(
             'tab_button_hover',
             [
-                'label' => __( 'Hover', 'elementor-super-cat' ),
+                'label' => __( 'Hover', 'yx-super-cat' ),
             ]
         );
 
         $this->add_control(
             'hover_color',
             [
-                'label' => __( 'Text Color', 'elementor-super-cat' ),
+                'label' => __( 'Text Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} a.elementor-button:hover, {{WRAPPER}} .elementor-button:hover, {{WRAPPER}} a.elementor-button:focus, {{WRAPPER}} .elementor-button:focus' => 'color: {{VALUE}};',
@@ -1035,7 +1035,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'button_background_hover_color',
             [
-                'label' => __( 'Background Color', 'elementor-super-cat' ),
+                'label' => __( 'Background Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} a.elementor-button:hover, {{WRAPPER}} .elementor-button:hover, {{WRAPPER}} a.elementor-button:focus, {{WRAPPER}} .elementor-button:focus' => 'background-color: {{VALUE}};',
@@ -1046,7 +1046,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'button_hover_border_color',
             [
-                'label' => __( 'Border Color', 'elementor-super-cat' ),
+                'label' => __( 'Border Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'condition' => [
                     'border_border!' => '',
@@ -1060,7 +1060,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'hover_animation',
             [
-                'label' => __( 'Hover Animation', 'elementor-super-cat' ),
+                'label' => __( 'Hover Animation', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -1081,7 +1081,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_control(
             'border_radius',
             [
-                'label' => __( 'Border Radius', 'elementor-super-cat' ),
+                'label' => __( 'Border Radius', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1101,7 +1101,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'text_padding',
             [
-                'label' => __( 'Padding', 'elementor-super-cat' ),
+                'label' => __( 'Padding', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
@@ -1252,7 +1252,7 @@ class Autostop_Video extends \Elementor\Widget_Base {
                                 <?php if ( 'yes' === $settings['show_play_icon'] ) : ?>
                                     <div class="elementor-custom-embed-play" role="button">
                                         <i class="eicon-play" aria-hidden="true"></i>
-                                        <span class="elementor-screen-only"><?php echo __( 'Play Video', 'elementor-super-cat' ); ?></span>
+                                        <span class="elementor-screen-only"><?php echo __( 'Play Video', 'yx-super-cat' ); ?></span>
                                     </div>
                                 <?php endif; ?>
                             </div>

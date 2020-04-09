@@ -6,7 +6,7 @@
 * Version: 1.0
 **/
 
-class Elementor_Super_Cat_Admin {
+class YX_Super_Cat_Admin {
 
     public $tabs = array(
         "welcome" => "Welcome",
@@ -39,23 +39,23 @@ class Elementor_Super_Cat_Admin {
 
     public function settings_page() {
         //Create the menu item and page
-        $page_title = "Elementor Super Cat";
+        $page_title = "YX Super Cat";
         $menu_title = "Super Cat";
         $capability = "manage_options";
-        $slug = "elementor-super-cat";
+        $slug = "yx-super-cat";
         $callback = array( $this, 'settings_page_content' );
         add_menu_page( $page_title, $menu_title, $capability, $slug, $callback );
     }
     /* Create the page*/
     public function settings_page_content() { ?>
         <div class="wrap">
-            <h1> Elementor Super Cat </h1>
+            <h1> YX Super Cat </h1>
             <div class="nav-tab-wrapper" style="margin-bottom: 30px;">
                 <?php
                 foreach($this->tabs as $k => $v){
                     ?>
 
-                    <a class="nav-tab <?php echo $this->current_tab == $k || '' ? 'nav-tab-active' : ''; ?>" href="<?php echo admin_url( 'admin.php?page=elementor-super-cat&tab='.$k ); ?>"><?php _e( $v, 'elementor-super-cat' ); ?> </a>
+                    <a class="nav-tab <?php echo $this->current_tab == $k || '' ? 'nav-tab-active' : ''; ?>" href="<?php echo admin_url( 'admin.php?page=yx-super-cat&tab='.$k ); ?>"><?php _e( $v, 'yx-super-cat' ); ?> </a>
 
                     <?php
                 }

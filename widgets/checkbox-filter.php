@@ -29,7 +29,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
     * @return string Widget title.
     */
     public function get_title() {
-        return __( 'Post Checkbox Filter', 'elementor-super-cat' );
+        return __( 'Post Checkbox Filter', 'yx-super-cat' );
     }
 
     /**
@@ -56,7 +56,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
     * @return array Widget categories.
     */
     public function get_categories() {
-        return [ 'super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -69,7 +69,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
     * @return array Widget scripts dependencies.
     */
     public function get_script_depends() {
-        return [ 'elementor-super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -84,14 +84,14 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __( 'Content', 'elementor-super-cat' ),
+                'label' => __( 'Content', 'yx-super-cat' ),
             ]
         );
 
         $this->add_control(
             'taxonomy',
             [
-                'label' => __( 'Name of taxonomy to filter', 'elementor-super-cat' ),
+                'label' => __( 'Name of taxonomy to filter', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'label_block' => true,
                 'options' => $this->get_taxonomies(),
@@ -102,7 +102,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'post_id',
             [
-                'label' => __( 'CSS ID of the post widget', 'elementor-super-cat' ),
+                'label' => __( 'CSS ID of the post widget', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
             ]
         );
@@ -110,12 +110,12 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'order_by',
             [
-                'label' => __( 'Order By', 'elementor-super-cat' ),
+                'label' => __( 'Order By', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'name',
                 'options' => [
-                    'name'  => __( 'Name', 'elementor-super-cat' ),
-                    'slug' => __( 'Slug', 'elementor-super-cat' ),
+                    'name'  => __( 'Name', 'yx-super-cat' ),
+                    'slug' => __( 'Slug', 'yx-super-cat' ),
                 ],
             ]
         );
@@ -135,7 +135,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_style',
             [
-                'label' => __( 'Style', 'elementor-super-cat' ),
+                'label' => __( 'Style', 'yx-super-cat' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -143,7 +143,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'color_filter',
             [
-                'label' => __( 'Color', 'elementor-super-cat' ),
+                'label' => __( 'Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cat-checkbox-filter' => 'color: {{VALUE}}',
@@ -154,7 +154,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'color_filter_active',
             [
-                'label' => __( 'Active Color', 'elementor-super-cat' ),
+                'label' => __( 'Active Color', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cat-checkbox-filter.elementor-active' => 'color: {{VALUE}};',
@@ -173,7 +173,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'filter_item_spacing',
             [
-                'label' => __( 'Space Between', 'elementor-super-cat' ),
+                'label' => __( 'Space Between', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 10,
@@ -198,7 +198,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_style_icon',
             [
-                'label' => __( 'Icon', 'elementor-super-cat' ),
+                'label' => __( 'Icon', 'yx-super-cat' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -224,7 +224,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'color_icon_off',
             [
-                'label' => __( 'Color icon OFF', 'elementor-super-cat' ),
+                'label' => __( 'Color icon OFF', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cat-checkbox-filter .cat-checkbox-icon-container' => 'color: {{VALUE}}',
@@ -235,7 +235,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'color_icon_on',
             [
-                'label' => __( 'Color icon ON', 'elementor-super-cat' ),
+                'label' => __( 'Color icon ON', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .cat-checkbox-filter.elementor-active .cat-checkbox-icon-container' => 'color: {{VALUE}}',
@@ -246,7 +246,7 @@ class Checkbox_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'filter_icon_spacing',
             [
-                'label' => __( 'Spacing', 'elementor-super-cat' ),
+                'label' => __( 'Spacing', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 20,

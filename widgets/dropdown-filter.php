@@ -29,7 +29,7 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
     * @return string Widget title.
     */
     public function get_title() {
-        return __( 'Post Dropdown Filter', 'elementor-super-cat' );
+        return __( 'Post Dropdown Filter', 'yx-super-cat' );
     }
 
     /**
@@ -56,7 +56,7 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
     * @return array Widget categories.
     */
     public function get_categories() {
-        return [ 'super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -69,7 +69,7 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
     * @return array Widget scripts dependencies.
     */
     public function get_script_depends() {
-        return [ 'elementor-super-cat' ];
+        return [ 'yx-super-cat' ];
     }
 
     /**
@@ -84,14 +84,14 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __( 'Content', 'elementor-super-cat' ),
+                'label' => __( 'Content', 'yx-super-cat' ),
             ]
         );
 
         $this->add_control(
             'taxonomy',
             [
-                'label' => __( 'Name of taxonomy to filter', 'elementor-super-cat' ),
+                'label' => __( 'Name of taxonomy to filter', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'label_block' => true,
                 'options' => $this->get_taxonomies(),
@@ -102,7 +102,7 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'post_id',
             [
-                'label' => __( 'CSS ID of the post widget', 'elementor-super-cat' ),
+                'label' => __( 'CSS ID of the post widget', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
             ]
         );
@@ -110,12 +110,12 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'order_by',
             [
-                'label' => __( 'Order By', 'elementor-super-cat' ),
+                'label' => __( 'Order By', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'name',
                 'options' => [
-                    'name'  => __( 'Name', 'elementor-super-cat' ),
-                    'slug' => __( 'Slug', 'elementor-super-cat' ),
+                    'name'  => __( 'Name', 'yx-super-cat' ),
+                    'slug' => __( 'Slug', 'yx-super-cat' ),
                 ],
             ]
         );
@@ -123,9 +123,9 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
         $this->add_control(
             'select_text',
             [
-                'label' => __( '<b>Show All</b> text', 'elementor-super-cat' ),
+                'label' => __( '<b>Show All</b> text', 'yx-super-cat' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => __( 'Enter the default placeholder text', 'elementor-super-cat' ),
+                'placeholder' => __( 'Enter the default placeholder text', 'yx-super-cat' ),
                 'default' => "all"
             ]
         );
@@ -181,7 +181,7 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
         data-term=""
         data-container="'.$filtererId.'"
         data-posts="'.$settings['post_id'].'">
-        '. __($select_text, 'elementor-super-cat').'
+        '. __($select_text, 'yx-super-cat').'
         </option>';
         foreach ($terms as $k => $v) {
           	$slug = (preg_match("/\p{Hebrew}/u", urldecode($v->slug))?$v->term_id : $v->slug);
@@ -197,7 +197,7 @@ class Dropdown_Filter extends \Elementor\Widget_Base {
         ?>
 
 
-        <select class="super-cat-dropdown-list cat-filter-for-<?php echo $settings['post_id']; ?>" id="<?php echo $filtererId; ?>">
+        <select class="yx-super-cat-dropdown-list cat-filter-for-<?php echo $settings['post_id']; ?>" id="<?php echo $filtererId; ?>">
             <?php echo $placeholder; ?>
             <?php echo(implode($li)); ?>
         </select>

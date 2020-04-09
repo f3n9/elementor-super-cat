@@ -1,6 +1,6 @@
 <?php
 
-class Elementor_Super_Cat_Extra_Webhooks {
+class YX_Super_Cat_Extra_Webhooks {
     function hooks(){
         //Add our additional webhook right here
         add_action( 'elementor_pro/forms/new_record', array( $this, 'manipulate_form_submission' ), 10, 2 );
@@ -37,5 +37,5 @@ class Elementor_Super_Cat_Extra_Webhooks {
         }
     }
 }
-$elementor_webhooks = new Elementor_Super_Cat_Extra_Webhooks();
+$elementor_webhooks = new YX_Super_Cat_Extra_Webhooks();
 $elementor_webhooks->hooks();

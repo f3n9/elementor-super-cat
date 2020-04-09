@@ -1,6 +1,6 @@
 <?php
 
-class Elementor_Super_Cat_Headers_Footers {
+class YX_Super_Cat_Headers_Footers {
 
   private $ab;
 
@@ -38,4 +38,4 @@ class Elementor_Super_Cat_Headers_Footers {
     echo(get_option("elementor_super_cat_hf_footer_" . $this->ab));
   }
 }
-$elementor_super_cat_hf = new Elementor_Super_Cat_Headers_Footers();
+$elementor_super_cat_hf = new YX_Super_Cat_Headers_Footers();

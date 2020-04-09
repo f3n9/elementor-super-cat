@@ -36,7 +36,7 @@ class Param_Button extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Param Button', 'elementor-super-cat' );
+		return __( 'Param Button', 'yx-super-cat' );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Param_Button extends \Elementor\Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'super-cat' ];
+		return [ 'yx-super-cat' ];
 	}
 
 	/**
@@ -79,11 +79,11 @@ class Param_Button extends \Elementor\Widget_Base {
 	 */
 	public static function get_button_sizes() {
 		return [
-			'xs' => __( 'Extra Small', 'elementor-super-cat' ),
-			'sm' => __( 'Small', 'elementor-super-cat' ),
-			'md' => __( 'Medium', 'elementor-super-cat' ),
-			'lg' => __( 'Large', 'elementor-super-cat' ),
-			'xl' => __( 'Extra Large', 'elementor-super-cat' ),
+			'xs' => __( 'Extra Small', 'yx-super-cat' ),
+			'sm' => __( 'Small', 'yx-super-cat' ),
+			'md' => __( 'Medium', 'yx-super-cat' ),
+			'lg' => __( 'Large', 'yx-super-cat' ),
+			'xl' => __( 'Extra Large', 'yx-super-cat' ),
 		];
 	}
 
@@ -98,22 +98,22 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_button',
 			[
-				'label' => __( 'Button', 'elementor-super-cat' ),
+				'label' => __( 'Button', 'yx-super-cat' ),
 			]
 		);
 
 		$this->add_control(
 			'button_type',
 			[
-				'label' => __( 'Type', 'elementor-super-cat' ),
+				'label' => __( 'Type', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'' => __( 'Default', 'elementor-super-cat' ),
-					'info' => __( 'Info', 'elementor-super-cat' ),
-					'success' => __( 'Success', 'elementor-super-cat' ),
-					'warning' => __( 'Warning', 'elementor-super-cat' ),
-					'danger' => __( 'Danger', 'elementor-super-cat' ),
+					'' => __( 'Default', 'yx-super-cat' ),
+					'info' => __( 'Info', 'yx-super-cat' ),
+					'success' => __( 'Success', 'yx-super-cat' ),
+					'warning' => __( 'Warning', 'yx-super-cat' ),
+					'danger' => __( 'Danger', 'yx-super-cat' ),
 				],
 				'prefix_class' => 'elementor-button-',
 			]
@@ -122,26 +122,26 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'text',
 			[
-				'label' => __( 'Text', 'elementor-super-cat' ),
+				'label' => __( 'Text', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'Click here', 'elementor-super-cat' ),
-				'placeholder' => __( 'Click here', 'elementor-super-cat' ),
+				'default' => __( 'Click here', 'yx-super-cat' ),
+				'placeholder' => __( 'Click here', 'yx-super-cat' ),
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'elementor-super-cat' ),
+				'label' => __( 'Link', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => __( 'https://your-link.com', 'elementor-super-cat' ),
-                'default' => __( '#', 'elementor-super-cat' ),
+				'placeholder' => __( 'https://your-link.com', 'yx-super-cat' ),
+                'default' => __( '#', 'yx-super-cat' ),
 
 			]
 		);
@@ -161,23 +161,23 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor-super-cat' ),
+				'label' => __( 'Alignment', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'left'    => [
-						'title' => __( 'Left', 'elementor-super-cat' ),
+						'title' => __( 'Left', 'yx-super-cat' ),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor-super-cat' ),
+						'title' => __( 'Center', 'yx-super-cat' ),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor-super-cat' ),
+						'title' => __( 'Right', 'yx-super-cat' ),
 						'icon' => 'fa fa-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'elementor-super-cat' ),
+						'title' => __( 'Justified', 'yx-super-cat' ),
 						'icon' => 'fa fa-align-justify',
 					],
 				],
@@ -189,7 +189,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'size',
 			[
-				'label' => __( 'Size', 'elementor-super-cat' ),
+				'label' => __( 'Size', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'sm',
 				'options' => self::get_button_sizes(),
@@ -200,7 +200,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'elementor-super-cat' ),
+				'label' => __( 'Icon', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::ICON,
 				'label_block' => true,
 				'default' => '',
@@ -210,12 +210,12 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label' => __( 'Icon Position', 'elementor-super-cat' ),
+				'label' => __( 'Icon Position', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'left',
 				'options' => [
-					'left' => __( 'Before', 'elementor-super-cat' ),
-					'right' => __( 'After', 'elementor-super-cat' ),
+					'left' => __( 'Before', 'yx-super-cat' ),
+					'right' => __( 'After', 'yx-super-cat' ),
 				],
 				'condition' => [
 					'icon!' => '',
@@ -226,7 +226,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'icon_indent',
 			[
-				'label' => __( 'Icon Spacing', 'elementor-super-cat' ),
+				'label' => __( 'Icon Spacing', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -246,7 +246,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor-super-cat' ),
+				'label' => __( 'View', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -255,15 +255,15 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'button_css_id',
 			[
-				'label' => __( 'Button ID', 'elementor-super-cat' ),
+				'label' => __( 'Button ID', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
 				'default' => '',
-				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'elementor-super-cat' ),
+				'title' => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'yx-super-cat' ),
 				'label_block' => false,
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'elementor-super-cat' ),
+				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'yx-super-cat' ),
 				'separator' => 'before',
 
 			]
@@ -274,7 +274,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Button', 'elementor-super-cat' ),
+				'label' => __( 'Button', 'yx-super-cat' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -293,14 +293,14 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'elementor-super-cat' ),
+				'label' => __( 'Normal', 'yx-super-cat' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label' => __( 'Text Color', 'elementor-super-cat' ),
+				'label' => __( 'Text Color', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -312,7 +312,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label' => __( 'Background Color', 'elementor-super-cat' ),
+				'label' => __( 'Background Color', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => \Elementor\Scheme_Color::get_type(),
@@ -329,14 +329,14 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'elementor-super-cat' ),
+				'label' => __( 'Hover', 'yx-super-cat' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label' => __( 'Text Color', 'elementor-super-cat' ),
+				'label' => __( 'Text Color', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} a.elementor-button:hover, {{WRAPPER}} .elementor-button:hover, {{WRAPPER}} a.elementor-button:focus, {{WRAPPER}} .elementor-button:focus' => 'color: {{VALUE}};',
@@ -347,7 +347,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'button_background_hover_color',
 			[
-				'label' => __( 'Background Color', 'elementor-super-cat' ),
+				'label' => __( 'Background Color', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} a.elementor-button:hover, {{WRAPPER}} .elementor-button:hover, {{WRAPPER}} a.elementor-button:focus, {{WRAPPER}} .elementor-button:focus' => 'background-color: {{VALUE}};',
@@ -358,7 +358,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label' => __( 'Border Color', 'elementor-super-cat' ),
+				'label' => __( 'Border Color', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
@@ -372,7 +372,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Hover Animation', 'elementor-super-cat' ),
+				'label' => __( 'Hover Animation', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -393,7 +393,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor-super-cat' ),
+				'label' => __( 'Border Radius', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -413,7 +413,7 @@ class Param_Button extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'text_padding',
 			[
-				'label' => __( 'Padding', 'elementor-super-cat' ),
+				'label' => __( 'Padding', 'yx-super-cat' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [

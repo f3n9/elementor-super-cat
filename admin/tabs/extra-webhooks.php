@@ -55,7 +55,7 @@ class Super_Cat_Tab {
 
             add_settings_field(
                 $this->option_prefix . 'form_name_'.$i,
-                __( 'Elementor Form Name', 'elementor-super-cat' ),
+                __( 'Elementor Form Name', 'yx-super-cat' ),
                 array( $this, 'field_form_name_callback' ),
                 $this->plugin_name,
                 "sezione",
@@ -64,7 +64,7 @@ class Super_Cat_Tab {
 
             add_settings_field(
                 $this->option_prefix . 'wh_url_'.$i,
-                __( 'Webhook URL', 'elementor-super-cat' ),
+                __( 'Webhook URL', 'yx-super-cat' ),
                 array( $this, 'field_wh_url_callback' ),
                 $this->plugin_name,
                 "sezione",

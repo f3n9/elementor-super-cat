@@ -1,6 +1,6 @@
 <?php
 
-class Elementor_Super_Cat_Woocomm_AC {
+class YX_Super_Cat_Woocomm_AC {
     public $api_url;
     public $api_key;
     public $option_prefix;
@@ -203,4 +203,4 @@ class Elementor_Super_Cat_Woocomm_AC {
 
 
 }
-$elementor_webhooks = new Elementor_Super_Cat_Woocomm_AC();
+$elementor_webhooks = new YX_Super_Cat_Woocomm_AC();
