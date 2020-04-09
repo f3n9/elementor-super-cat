@@ -11,7 +11,7 @@ class YX_Super_Cat_Woocomm_AC {
     }
     public function init(){
         require_once(__DIR__ . '/../helpers/activecampaign-api-v3.php');
-        $this->option_prefix = "elementor_super_cat_wooac_";
+        $this->option_prefix = "yinxiang_super_cat_wooac_";
         $this->ac = $this->get_api_data();
         if($this->ac){
             $this->hooks();

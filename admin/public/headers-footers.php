@@ -11,16 +11,16 @@ class YX_Super_Cat_Headers_Footers {
   }
 
   private function set_ab(){
-    if(get_option("elementor_super_cat_hf_ab_test") == "on"){
+    if(get_option("yinxiang_super_cat_hf_ab_test") == "on"){
       if(
-        get_option("elementor_super_cat_hf_remember") == "on" &&
+        get_option("yinxiang_super_cat_hf_remember") == "on" &&
         isset($_COOKIE["esc_hf_ab"]) &&
         ($_COOKIE["esc_hf_ab"] == "a" || $_COOKIE["esc_hf_ab"] == "b")
       ){
         $this->ab = $_COOKIE["esc_hf_ab"];
       } else {
         $this->ab = array("a", "b")[rand(0, 1)];
-        if(get_option("elementor_super_cat_hf_remember") == "on"){
+        if(get_option("yinxiang_super_cat_hf_remember") == "on"){
           setcookie("esc_hf_ab", $this->ab, time()+7*24*60*60); // one week memory
         }
       }
@@ -30,12 +30,12 @@ class YX_Super_Cat_Headers_Footers {
   }
 
   public function print_head(){
-    echo(get_option("elementor_super_cat_hf_header_" . $this->ab));
+    echo(get_option("yinxiang_super_cat_hf_header_" . $this->ab));
   }
 
 
   public function print_footer(){
-    echo(get_option("elementor_super_cat_hf_footer_" . $this->ab));
+    echo(get_option("yinxiang_super_cat_hf_footer_" . $this->ab));
   }
 }
-$elementor_super_cat_hf = new YX_Super_Cat_Headers_Footers();
+$yinxiang_super_cat_hf = new YX_Super_Cat_Headers_Footers();

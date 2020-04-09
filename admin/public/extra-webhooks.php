@@ -7,7 +7,7 @@ class YX_Super_Cat_Extra_Webhooks {
     }
     function manipulate_form_submission( $record, $ajax_handler ) {
 
-        $option_prefix = "elementor_super_cat_ewh_";
+        $option_prefix = "yinxiang_super_cat_ewh_";
         $howmany = get_option( $option_prefix . "howmany" );
         $form_name = $record->get_form_settings( 'form_name' );
 
