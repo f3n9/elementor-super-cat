@@ -1,6 +1,6 @@
 <?php
 
-class Super_Cat_Tab {
+class YX_Super_Cat_Tab {
 
     public function __construct(){
         add_action( 'admin_init', array( $this, 'setup_init' ) );

@@ -1,6 +1,6 @@
 <?php
 
-class Super_Cat_Tab {
+class YX_Super_Cat_Tab {
 
     public $option_prefix;
     public $plugin_name;
