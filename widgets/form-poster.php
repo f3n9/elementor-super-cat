@@ -172,6 +172,31 @@ class Yinxiang_Form_Poster extends Widget_Base {
 
     }
 
+
+    // get milliseconds of current time, plus optional offset seconds, as a string
+    public function millitime($offset_secs=0) {
+        $microtime = explode(' ', microtime());
+        $millis = intval($microtime[0] * 1000);
+        if ($offset_secs == 0) {
+            return sprintf('%d%03d', $microtime[1], $millis);
+        }
+
+        // PHP ints are either 32-bit or 64-bit, depending on system. To avoid
+        // overflow and maintain exactness, calculating secs and millis separately.
+        $secs = $microtime[1] + $offset_secs;
+        $forceSign = ''; // for adding a negative if needed
+        if ($secs < 0 && $millis > 0) {
+            $millis = 1000 - $millis;
+            $secs = $secs + 1;
+            $forceSign = $secs < 0 ? '' : '-';
+        }
+        return sprintf('%s%d%03d', $forceSign, $secs, $millis);
+    }
+
+    public function hashTimestamp($millis) {
+        return base64_encode(hash_hmac("sha1", $millis, "68caXl0qWK", true));
+    }
+
     /**
     * Render the widget output on the frontend.
     *
@@ -181,11 +206,16 @@ class Yinxiang_Form_Poster extends Widget_Base {
     */
     protected function render() {
         $settings = $this->get_settings_for_display();
+        // hash of current time in milliseconds for bots
+        $hpts = $this->millitime();
+        $hptsh = $this->hashTimestamp($hpts);
 
         ?>
 
         <script type='text/javascript'>
 
+        var hpts = <?php echo $hpts; ?>;
+        var hptsh = <?php echo $hptsh; ?>;
         var appHost = 'app.yinxiang.com';
         var curHost = window.location.hostname;
         if (curHost.match(/stage.*-www.yinxiang.com/)) {
