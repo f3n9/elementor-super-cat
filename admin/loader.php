@@ -40,7 +40,7 @@ class YX_Super_Cat_Admin {
     public function settings_page() {
         //Create the menu item and page
         $page_title = "YX Super Cat";
-        $menu_title = "Super Cat";
+        $menu_title = "YX Super Cat";
         $capability = "manage_options";
         $slug = "yx-super-cat";
         $callback = array( $this, 'settings_page_content' );

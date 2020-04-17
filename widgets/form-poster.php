@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 *
 * Elementor widget for Form Poster.
 */
-class Form_Poster extends Widget_Base {
+class Yinxiang_Form_Poster extends Widget_Base {
 
     /**
     * Retrieve the widget name.
@@ -21,7 +21,7 @@ class Form_Poster extends Widget_Base {
     * @return string Widget name.
     */
     public function get_name() {
-        return 'form-poster';
+        return 'yx-form-poster';
     }
 
     /**
@@ -32,7 +32,7 @@ class Form_Poster extends Widget_Base {
     * @return string Widget title.
     */
     public function get_title() {
-        return __( 'Form Poster', 'yx-super-cat' );
+        return __( 'YX Form Poster', 'yx-super-cat' );
     }
 
     /**

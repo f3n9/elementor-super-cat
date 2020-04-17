@@ -12,15 +12,17 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /* UPDATE CHECKER */
-
+/*
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'https://github.com/f3n9/elementor-super-cat/',
     __FILE__,
     'yx-super-cat'
 );
+*/
 
 // Include the admin menu
+/*
 require_once( __DIR__ . '/admin/loader.php' );
 $admin_esc = new YX_Super_Cat_Admin();
 foreach($admin_esc->tabs as $k => $v){
@@ -29,13 +31,13 @@ foreach($admin_esc->tabs as $k => $v){
         require_once($file);
     }
 }
-
+*/
 
 //Optional: If you're using a private repository, specify the access token like this:
 //$myUpdateChecker->setAuthentication('your-token-here');
 
 //Optional: Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('master');
+//$myUpdateChecker->setBranch('master');
 
 
 /**

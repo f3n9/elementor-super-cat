@@ -42,9 +42,9 @@ class Plugin {
     * @access public
     */
     public function widget_scripts() {
-        wp_register_script( 'post-filter-js', plugins_url( '/assets/js/post-filter.js', __FILE__ ), [ 'jquery' ], null, true );
-        wp_register_script( 'checkbox-filter-js', plugins_url( '/assets/js/checkbox-filter.js', __FILE__ ), [ 'jquery' ], null, true );
-        wp_register_script( 'dropdown-filter-js', plugins_url( '/assets/js/dropdown-filter.js', __FILE__ ), [ 'jquery' ], null, true );
+        //wp_register_script( 'post-filter-js', plugins_url( '/assets/js/post-filter.js', __FILE__ ), [ 'jquery' ], null, true );
+        //wp_register_script( 'checkbox-filter-js', plugins_url( '/assets/js/checkbox-filter.js', __FILE__ ), [ 'jquery' ], null, true );
+        //wp_register_script( 'dropdown-filter-js', plugins_url( '/assets/js/dropdown-filter.js', __FILE__ ), [ 'jquery' ], null, true );
     }
 
     /**
@@ -55,12 +55,12 @@ class Plugin {
     * @access public
     */
     public function widget_styles() {
-        wp_register_style( 'checkbox-filter-css', plugins_url( '/assets/css/checkbox-filter.css', __FILE__ ));
-        wp_register_style( 'autostop-video-css', plugins_url( '/assets/css/autostop-video.css', __FILE__ ));
-        if(\Elementor\Plugin::$instance->preview->is_preview_mode() || \Elementor\Plugin::$instance->editor->is_edit_mode()){
-            wp_enqueue_style('checkbox-filter-css');
-            wp_enqueue_style('autostop-video-css');
-        }
+        //wp_register_style( 'checkbox-filter-css', plugins_url( '/assets/css/checkbox-filter.css', __FILE__ ));
+        //wp_register_style( 'autostop-video-css', plugins_url( '/assets/css/autostop-video.css', __FILE__ ));
+        //if(\Elementor\Plugin::$instance->preview->is_preview_mode() || \Elementor\Plugin::$instance->editor->is_edit_mode()){
+        //    wp_enqueue_style('checkbox-filter-css');
+        //    wp_enqueue_style('autostop-video-css');
+        //}
     }
 
     /**
@@ -72,11 +72,13 @@ class Plugin {
     */
     private function include_widgets_files() {
         require_once( __DIR__ . '/widgets/form-poster.php' );
+        /*
         require_once( __DIR__ . '/widgets/post-filter.php' );
         require_once( __DIR__ . '/widgets/param-button.php' );
         require_once( __DIR__ . '/widgets/checkbox-filter.php' );
         require_once( __DIR__ . '/widgets/dropdown-filter.php' );
         require_once( __DIR__ . '/widgets/autostop-video.php' );
+        */
     }
 
     /**
@@ -91,12 +93,14 @@ class Plugin {
         $this->include_widgets_files();
 
         // Register Widgets
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Form_Poster() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Yinxiang_Form_Poster() );
+        /*
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Post_Filter() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Param_Button() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Checkbox_Filter() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Dropdown_Filter() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Autostop_Video() );
+        */
     }
 
     /**
