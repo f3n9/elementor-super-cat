@@ -125,6 +125,30 @@ class Yinxiang_Form_Poster extends Widget_Base {
         );
 
         $this->add_control(
+            'action_server',
+            [
+               'label' => __( 'Action Server Name', 'yx-super-cat' ),
+               'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'unchange' => [
+                        'title' => __( 'unchange', 'yx-super-cat' ),
+                    ],
+                    'wwwsite' => [
+                        'title' => __( 'wwwsite', 'yx-super-cat' ),
+                    ],
+                    'appsite' => [
+                        'title' => __( 'appsite', 'yx-super-cat' ),
+                    ],
+                    'staticsite' => [
+                        'title' => __( 'staticsite', 'yx-super-cat' ),
+                    ],
+                ],
+                'default' => 'wwwsite',
+                'toggle' => true,
+            ]
+        );
+
+        $this->add_control(
             'replace_underscores',
             [
                 'label' => __( 'Replace _# with [#] in input names.<br><br>E.g.: <b>field_1_0</b> becomes <b>field[1][0]</b>', 'yx-super-cat' ),
@@ -177,13 +201,26 @@ class Yinxiang_Form_Poster extends Widget_Base {
             var actionURL = "<?php echo $settings['url']; ?>";
             var superGattoID = "#form-yx-super-gatto-for-<?php echo $settings['formid']; ?>";
             var formMethod = "<?php echo $settings['form_method']; ?>";
+            var actionServer = "<?php echo $settings['action_server']; ?>";
 
             var $jq = jQuery.noConflict();
             $jq(superGattoID).html($jq(formID).html());
             $jq(superGattoID).attr("class", $jq(formID).attr("class"));
             $jq(formID).hide();
             $jq(superGattoID + " form").attr("method", formMethod);
-            $jq(superGattoID + " form").attr("action", "https://" + curHost + actionURL);
+
+	    if (actionServer === "wwwsite") {
+               $jq(superGattoID + " form").attr("action", "https://" + curHost + actionURL);
+	    } else if (actionServer === "appsite") {
+               $jq(superGattoID + " form").attr("action", "https://" + appHost + actionURL);
+	    } else if (actionServer === "staticsite") {
+               $jq(superGattoID + " form").attr("action", "https://static." + appHost + actionURL);
+	    } else if (actionServer === "unchange") {
+               $jq(superGattoID + " form").attr("action", actionURL);
+	    } else {
+               $jq(superGattoID + " form").attr("action", actionURL);
+            }
+
             $jq(superGattoID + " form").find('input, textarea, select').each(function(){
                 var matches = $jq(this).attr("name").match(/form_fields\[(.*?)\]/);
                 if (matches) {
