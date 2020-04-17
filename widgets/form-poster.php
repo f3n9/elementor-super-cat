@@ -107,6 +107,24 @@ class Yinxiang_Form_Poster extends Widget_Base {
         );
 
         $this->add_control(
+            'form_method',
+            [
+               'label' => __( 'Form method', 'yx-super-cat' ),
+               'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'GET' => [
+                        'title' => __( 'GET', 'yx-super-cat' ),
+                    ],
+                    'POST' => [
+                        'title' => __( 'POST', 'yx-super-cat' ),
+                    ],
+                ],
+                'default' => 'POST',
+                'toggle' => true,
+            ]
+        );
+
+        $this->add_control(
             'replace_underscores',
             [
                 'label' => __( 'Replace _# with [#] in input names.<br><br>E.g.: <b>field_1_0</b> becomes <b>field[1][0]</b>', 'yx-super-cat' ),
@@ -143,18 +161,29 @@ class Yinxiang_Form_Poster extends Widget_Base {
         ?>
 
         <script type='text/javascript'>
+
+        var appHost = 'app.yinxiang.com';
+        var curHost = window.location.hostname;
+        if (curHost.match(/stage.*-www.yinxiang.com/)) {
+            appHost = curHost.replace("-www","");
+	} else if (curHost === 'staging.yinxiang.com') {
+	    curHost = 'www.yinxiang.com';
+        }
+
         document.addEventListener("DOMContentLoaded", function(event) {
             /* The ID assigned to the form widget via Elementor */
             var formID = "#<?php echo $settings['formid']; ?>";
             /* The URL to which you want to send the data */
             var actionURL = "<?php echo $settings['url']; ?>";
-            var superGattoID = "#form-super-gatto-for-<?php echo $settings['formid']; ?>";
+            var superGattoID = "#form-yx-super-gatto-for-<?php echo $settings['formid']; ?>";
+            var formMethod = "<?php echo $settings['form_method']; ?>";
 
             var $jq = jQuery.noConflict();
             $jq(superGattoID).html($jq(formID).html());
             $jq(superGattoID).attr("class", $jq(formID).attr("class"));
             $jq(formID).hide();
-            $jq(superGattoID + " form").attr("action", actionURL);
+            $jq(superGattoID + " form").attr("method", formMethod);
+            $jq(superGattoID + " form").attr("action", "https://" + curHost + actionURL);
             $jq(superGattoID + " form").find('input, textarea, select').each(function(){
                 var matches = $jq(this).attr("name").match(/form_fields\[(.*?)\]/);
                 if (matches) {
@@ -178,9 +207,20 @@ class Yinxiang_Form_Poster extends Widget_Base {
             //         document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
             //     });
             // });
+
+            <?php if($settings['formid'] == "redeemcode"){ ?>
+            $jq(document).on('keyup input', superGattoID + " form div div input", function(e) {
+              var foo = $jq(this).val().split('-').join('');
+              // remove hyphens
+              if (foo.length > 0) {
+                foo = foo.match(new RegExp('.{1,5}', 'g')).join('-');
+              }
+              $jq(this).val(foo.toUpperCase().substr(0,23));
+            });
+	    <?php } ?>
         });
         </script>
-        <div id="form-super-gatto-for-<?php echo $settings['formid']; ?>"></div>
+        <div id="form-yx-super-gatto-for-<?php echo $settings['formid']; ?>"></div>
         <?php
 
     }
