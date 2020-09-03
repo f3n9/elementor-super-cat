@@ -149,6 +149,24 @@ class Yinxiang_Form_Poster extends Widget_Base {
         );
 
         $this->add_control(
+            'use_hpts',
+            [
+               'label' => __( 'Add hpts/hptsh hidden fields', 'yx-super-cat' ),
+               'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'no' => [
+                        'title' => __( 'no', 'yx-super-cat' ),
+                    ],
+                    'yes' => [
+                        'title' => __( 'yes', 'yx-super-cat' ),
+                    ],
+                ],
+                'default' => 'no',
+                'toggle' => true,
+            ]
+        );
+
+        $this->add_control(
             'replace_underscores',
             [
                 'label' => __( 'Replace _# with [#] in input names.<br><br>E.g.: <b>field_1_0</b> becomes <b>field[1][0]</b>', 'yx-super-cat' ),
@@ -174,7 +192,7 @@ class Yinxiang_Form_Poster extends Widget_Base {
 
 
     // get milliseconds of current time, plus optional offset seconds, as a string
-    public function millitime($offset_secs=0) {
+    private function millitime($offset_secs=0) {
         $microtime = explode(' ', microtime());
         $millis = intval($microtime[0] * 1000);
         if ($offset_secs == 0) {
@@ -193,7 +211,7 @@ class Yinxiang_Form_Poster extends Widget_Base {
         return sprintf('%s%d%03d', $forceSign, $secs, $millis);
     }
 
-    public function hashTimestamp($millis) {
+    private function hashTimestamp($millis) {
         return base64_encode(hash_hmac("sha1", $millis, "68caXl0qWK", true));
     }
 
@@ -206,6 +224,11 @@ class Yinxiang_Form_Poster extends Widget_Base {
     */
     protected function render() {
         $settings = $this->get_settings_for_display();
+	if ($settings['use_hpts']=="yes"){
+            header("Cache-Control: no-cache, no-store, must-revalidate"); //HTTP 1.1
+            header("Pragma: no-cache"); //HTTP 1.0
+            header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+        }
         // hash of current time in milliseconds for bots
         $hpts = $this->millitime();
         $hptsh = $this->hashTimestamp($hpts);
@@ -214,8 +237,6 @@ class Yinxiang_Form_Poster extends Widget_Base {
 
         <script type='text/javascript'>
 
-        var hpts = <?php echo $hpts; ?>;
-        var hptsh = <?php echo $hptsh; ?>;
         var appHost = 'app.yinxiang.com';
         var curHost = window.location.hostname;
         if (curHost.match(/stage.*-www.yinxiang.com/)) {
@@ -234,8 +255,8 @@ class Yinxiang_Form_Poster extends Widget_Base {
             var actionServer = "<?php echo $settings['action_server']; ?>";
 
             var $jq = jQuery.noConflict();
-            $jq(superGattoID).html($jq(formID).html());
             $jq(superGattoID).attr("class", $jq(formID).attr("class"));
+            $jq(superGattoID).html($jq(formID).html());
             $jq(formID).hide();
             $jq(superGattoID + " form").attr("method", formMethod);
 
@@ -274,6 +295,25 @@ class Yinxiang_Form_Poster extends Widget_Base {
             //         document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
             //     });
             // });
+
+            <?php if($settings['use_hpts'] == "yes"){ ?>
+            $jq(superGattoID + " form").find('input').each(function(){
+                if ($jq(this).attr("name")==='hpts') {
+                    $jq(this).attr("value", "<?php echo $hpts; ?>");
+                }
+                if ($jq(this).attr("name")==='hptsh') {
+                    $jq(this).attr("value", "<?php echo $hptsh; ?>");
+                }
+            });
+	    <?php } ?>
+            <?php if($settings['formid'] == "form_new_biz_upgrade"){ ?>
+	    $jq(document).on('keyup input', superGattoID + " form div div input", function(e) {
+              var contactNameVal = encodeURIComponent($jq(superGattoID + " form div .elementor-field-group-contactName input").val());
+              var businessNameVal = encodeURIComponent($jq(superGattoID + " form div .elementor-field-group-businessName input").val());
+              $jq(superGattoID + " form div .elementor-field-group-targetUrl input").val('https://' + appHost + '/business/ExistingUserAddBusiness.action?createBusinessAccount=&flowExperiment=cross'
+	        + '&contactName=' + contactNameVal + "&businessName=" + businessNameVal);
+            });
+	    <?php } ?>
 
             <?php if($settings['formid'] == "redeemcode"){ ?>
             $jq(document).on('keyup input', superGattoID + " form div div input", function(e) {
