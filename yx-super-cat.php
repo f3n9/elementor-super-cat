@@ -3,7 +3,7 @@
 * Plugin Name: YX SuperCat
 * Description: YX Elementor add-ons
 * Plugin URI:  https://github.com/f3n9/yx-super-cat
-* Version:     2.5.2
+* Version:     2.5.3
 * Author:      Nicola Cavallazzi
 * Author URI:  https://cosmo.cat/
 * Text Domain: yx-super-cat
