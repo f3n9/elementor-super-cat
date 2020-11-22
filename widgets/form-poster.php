@@ -239,7 +239,7 @@ class Yinxiang_Form_Poster extends Widget_Base {
 
         var appHost = 'app.yinxiang.com';
         var curHost = window.location.hostname;
-        if (curHost.match(/stage.*-www.yinxiang.com/)) {
+        if (curHost.match(/stage.*-www.yinxiang.com/) || curHost.match(/sandbox.*-www.yinxiang.com/)) {
             appHost = curHost.replace("-www","");
 	} else if (curHost === 'staging.yinxiang.com') {
 	    curHost = 'www.yinxiang.com';
