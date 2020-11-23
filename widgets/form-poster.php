@@ -325,6 +325,51 @@ class Yinxiang_Form_Poster extends Widget_Base {
               $jq(this).val(foo.toUpperCase().substr(0,23));
             });
 	    <?php } ?>
+
+            <?php if($settings['formid'] == "reg_form"){ ?>
+
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-117332876-40', 'auto');
+
+            $jq("#reg_form > div > div > button").prop("type", "button");
+            $jq("#reg_form > div > div > button").css("background-color","#00b548");
+            $jq("#reg_form > div > div > button").css("padding-left","188");
+            $jq("#reg_form > div > div > button").css("padding-right","188");
+            var $reg_timeout = 1000;
+            $jq(document).on('click', "#reg_form > div > div > button", function(e) {
+              if (navigator.userAgent.match(/Macintosh/i) !== null) { //mac
+                $reg_timeout = 5000;
+                window.location = 'https://www.yinxiang.com/download/get.php?file=EvernoteMac';
+                ga('send','event','account_signup','auto_download', 'mac');
+                Countly.q.push(['add_event',{
+                  "key": "account_signup",
+                  "count": 1,
+                  "segmentation": {
+                     "action": "auto_download",
+                     "label": "mac"
+                  }
+                }]);
+              } else if (navigator.userAgent.match(/Windows/i) !== null) { //windows
+                $reg_timeout = 10000;
+                window.location = 'https://www.yinxiang.com/download/get.php?file=Win';
+                ga('send','event','account_signup','auto_download', 'windows');
+                Countly.q.push(['add_event',{
+                  "key": "account_signup",
+                  "count": 1,
+                  "segmentation": {
+                     "action": "auto_download",
+                     "label": "windows"
+                  }
+                }]);
+              }
+              setTimeout(() => {
+                $jq(superGattoID + " form").submit();
+              }, $reg_timeout);
+            });
+            <?php } ?>
         });
         </script>
         <div id="form-yx-super-gatto-for-<?php echo $settings['formid']; ?>"></div>
